@@ -37,7 +37,7 @@ class login():
             self.EnterCode(sheet, False)
             self.regisstration = True
         finally:
-            self.FinallyAction()
+            return self.FinallyAction()
 
     def RegistrationVK(self):
             sheet = self.test_val.get_sheet_by_name('Val')
@@ -52,7 +52,7 @@ class login():
                 self.EnterCode(sheet, True)
                 self.regisstration = True
             finally:
-                self.FinallyAction()
+                return self.FinallyAction()
 
     def RegistrationFacebook(self):
         sheet = self.test_val.get_sheet_by_name('Val')
@@ -67,7 +67,7 @@ class login():
             self.EnterCode(sheet, True)
             self.regisstration = True
         finally:
-            self.FinallyAction()
+            return self.FinallyAction()
 
     def SwitchToWindow(self, window, flag, sheet):
         self.driver.switch_to_window(window)
