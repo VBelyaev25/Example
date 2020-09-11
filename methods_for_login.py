@@ -37,9 +37,7 @@ class login():
             self.EnterCode(sheet, False)
             self.regisstration = True
         finally:
-            assert self.regisstration, True
-            self.test_val.close()
-            return self.driver
+            self.FinallyAction()
 
     def RegistrationVK(self):
             sheet = self.test_val.get_sheet_by_name('Val')
@@ -54,9 +52,7 @@ class login():
                 self.EnterCode(sheet, True)
                 self.regisstration = True
             finally:
-                assert self.regisstration, True
-                self.test_val.close()
-                return self.driver
+                self.FinallyAction()
 
     def RegistrationFacebook(self):
         sheet = self.test_val.get_sheet_by_name('Val')
@@ -71,9 +67,7 @@ class login():
             self.EnterCode(sheet, True)
             self.regisstration = True
         finally:
-            assert self.regisstration, True
-            self.test_val.close()
-            return self.driver
+            self.FinallyAction()
 
     def SwitchToWindow(self, window, flag, sheet):
         self.driver.switch_to_window(window)
@@ -85,3 +79,8 @@ class login():
             time.sleep(3)
             self.driver.find_element_by_xpath('//label/div[2]/input').send_keys(sheet['A1'].value)
             self.driver.find_element_by_xpath('//div[3]//div[1]/button[1]').click()
+
+    def FinallyAction(self):
+        assert self.regisstration, True
+        self.test_val.close()
+        return self.driver
