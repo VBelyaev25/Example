@@ -1,6 +1,3 @@
-import sys
-sys.path.append('C:\\My_project\\src\\')
-
 import pytest
 from src import circle
 
