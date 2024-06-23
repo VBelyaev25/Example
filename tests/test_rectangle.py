@@ -1,7 +1,4 @@
-import sys
-
 import pytest
-sys.path.append('C:\\My_project\\src\\')
 from src import rectangle
 
 
